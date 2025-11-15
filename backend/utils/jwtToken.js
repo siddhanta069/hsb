@@ -1,5 +1,7 @@
+import jwt from "jsonwebtoken";
+
 export const generateToken = (user, message, statusCode, res) => {
-  const token = user.generateJsonWebToken();
+  const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
   // Determine the cookie name based on the user's role
   const cookieName = user.role === 'Admin' ? 'adminToken' : 'patientToken';
 
