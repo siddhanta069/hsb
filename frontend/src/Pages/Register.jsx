@@ -20,10 +20,11 @@ const Register = () => {
 
   const handleRegistration = async (e) => {
     e.preventDefault();
+    const backendUrl = import.meta.env.VITE_API_URL;
     try {
       await axios
         .post(
-          "http://localhost:5000/api/v1/user/patient/register",
+          backendUrl + "/api/v1/user/patient/register",
           { firstName, lastName, email, phone, nic, dob, gender, password },
           {
             withCredentials: true,

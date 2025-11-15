@@ -11,10 +11,12 @@ const MessageForm = () => {
 
   const handleMessage = async (e) => {
     e.preventDefault();
+
+    const backendUrl = import.meta.env.VITE_API_URL;
     try {
       await axios
         .post(
-          "http://localhost:5000/api/v1/message/send",
+          backendUrl + "/api/v1/message/send",
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,

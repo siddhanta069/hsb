@@ -15,10 +15,11 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const backendUrl = import.meta.env.VITE_API_URL;
     try {
       await axios
         .post(
-          "http://localhost:5000/api/v1/user/login",
+          backendUrl + "/api/v1/user/login",
           { email, password, confirmPassword, role: "Patient" },
           {
             withCredentials: true,
