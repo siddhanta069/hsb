@@ -446,7 +446,9 @@ nav .logo {
   flex: 1;
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 0.2rem;
+  border-radius: 50%;
+  
 }
 nav .navLinks {
   flex: 2;
